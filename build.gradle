@@ -1,0 +1,19 @@
+apply plugin: "java"
+apply plugin: "idea"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    implementation "org.slf4j:slf4j-api:$slf4jVersion"
+
+	//Do not add lombok as jar dependency just use it for project compilation
+	compileOnly "org.projectlombok:lombok:$lombokVersion"
+	annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+	testImplementation "junit:junit:$junitVersion"
+}
